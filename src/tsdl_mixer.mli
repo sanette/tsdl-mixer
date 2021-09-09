@@ -50,7 +50,7 @@ val get_chunk_decoder : int -> string
 
 (** {1 Channels} *)
 
-val allocate_channels : 'a -> int -> int
+val allocate_channels : int -> int
 val channel_finished : (int -> unit) -> unit
 val channel_post : int
 val play_channel_timed :

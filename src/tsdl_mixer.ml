@@ -25,7 +25,7 @@ let nat_to_ok =
   view ~read ~write:write_never int
 
 let nonzero_to_ok =
-  let read = function 0 -> error () | n -> Ok () in
+  let read = function 0 -> error () | _n -> Ok () in
   view ~read ~write:write_never int
 
 let zero_to_ok =
@@ -95,7 +95,7 @@ type music = _music structure ptr
 let open_audio =
   foreign "Mix_OpenAudio" (int @-> int @-> int @-> int @-> returning zero_to_ok)
 
-let allocate_channels n =
+let allocate_channels =
   foreign "Mix_AllocateChannels" (int @-> returning int)
 
 let query_spec =
