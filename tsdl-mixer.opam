@@ -7,17 +7,20 @@ description:
 maintainer: ["Vu Ngoc San <san.vu-ngoc@laposte.net>"]
 authors: ["Julian Squires <julian@cipht.net>"]
 license: "BSD-3-Clause"
+tags: ["tsdl" "SDL" "audio"]
 homepage: "https://github.com/sanette/tsdl-mixer"
 bug-reports: "https://github.com/sanette/tsdl-mixer/issues"
 depends: [
-  "dune" {>= "1.11"}
+  "dune" {>= "2.7"}
   "ocaml" {>= "4.03"}
-  "tsdl"
+  "tsdl" {>= "0.9.1"}
+  "conf-sdl2-mixer"
   "ctypes" {>= "0.4.0"}
   "ctypes-foreign"
+  "odoc" {with-doc}
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   [
     "dune"
     "build"

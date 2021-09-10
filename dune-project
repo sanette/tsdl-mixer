@@ -1,4 +1,4 @@
-(lang dune 1.11)
+(lang dune 2.7)
 (version "0.3.0")
 (name tsdl-mixer)
 (generate_opam_files true)
@@ -15,7 +15,7 @@
  (tags ("tsdl" "SDL" "audio"))
  (depends
   (ocaml (>= 4.03))
-  tsdl
+  (tsdl (>= 0.9.1))
+   conf-sdl2-mixer
   (ctypes (>= 0.4.0))
-  ctypes-foreign))
-
+   ctypes-foreign))
