@@ -50,6 +50,13 @@ module Init = struct
   let fluidsynth = i 32
 end
 
+(* This "hack" seems to be necessary for linux if you want to use
+   #require "tsdl-mixer"
+   in the toplevel, see
+   https://github.com/ocamllabs/ocaml-ctypes/issues/70 *)
+let foreign name typ =
+  foreign name typ ~from:Dl.(dlopen ~filename:"libSDL2_mixer-2.0.so"
+                               ~flags:[RTLD_NOW])
 let init =
   foreign "Mix_Init" (uint32_t @-> returning uint32_t)
 let init flags =
