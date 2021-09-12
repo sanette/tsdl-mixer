@@ -26,6 +26,9 @@ be generated with `dune build @doc`, but the binding follows the
 SDL2_mixer interface closely, so it may be sufficient to consult
 [its documentation](https://www.libsdl.org/projects/SDL_mixer/docs/index.html).
 
+Starting from version 0.3, the library is usable in a toplevel (with
+`#require "tsdl-mixer"`).
+
 ## WARNING V0.3 Breaking change
 
 Starting from 0.3, the library name is the same as the opam package
