@@ -55,7 +55,7 @@ end
    in the toplevel, see
    https://github.com/ocamllabs/ocaml-ctypes/issues/70 *)
 let foreign name typ =
-  foreign name typ ~from:Dl.(dlopen ~filename:"libSDL2_mixer-2.0.so"
+  foreign name typ ~from:Dl.(dlopen ~filename:"libSDL2_mixer-2.0.so.0"
                                ~flags:[RTLD_NOW])
 let init =
   foreign "Mix_Init" (uint32_t @-> returning uint32_t)
