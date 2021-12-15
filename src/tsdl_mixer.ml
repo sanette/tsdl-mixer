@@ -54,9 +54,19 @@ end
    #require "tsdl-mixer"
    in the toplevel, see
    https://github.com/ocamllabs/ocaml-ctypes/issues/70 *)
-let foreign name typ =
-  foreign name typ ~from:Dl.(dlopen ~filename:"libSDL2_mixer-2.0.so.0"
-                               ~flags:[RTLD_NOW])
+let dllib : Dl.library option =
+  if !Sys.interactive then (
+    let filename =
+      match Build_config.system with
+        | "macosx" -> "libSDL2_mixer-2.0.0.dylib"
+        | _ -> "libSDL2_mixer-2.0.so.0"
+    in
+    Some Dl.(dlopen ~filename ~flags:[RTLD_NOW]))
+  else
+    None
+
+let foreign = foreign ?from:dllib
+
 let init =
   foreign "Mix_Init" (uint32_t @-> returning uint32_t)
 let init flags =

@@ -1,6 +1,20 @@
 (library
   (name tsdl_mixer)
   (public_name tsdl-mixer)
-  (modules tsdl_mixer)
+  (modules tsdl_mixer build_config)
+  (private_modules build_config)
   (libraries ctypes tsdl)
-  (c_library_flags -lSDL2_mixer))
+  (c_library_flags (:include c_library_flags.sexp)))
+
+(rule
+ (targets c_library_flags.sexp)
+ (action
+  (run ../config/discover.exe)))
+
+(rule
+  (target build_config.ml)
+  (action
+    (with-stdout-to
+      %{target}
+      (echo "let system = \"%{system}\""))))
+
