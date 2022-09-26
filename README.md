@@ -24,7 +24,7 @@ Documentation is
 [here](https://sanette.github.io/tsdl-mixer/Mixer/index.html). It can
 be generated with `dune build @doc`, but the binding follows the
 SDL2_mixer interface closely, so it may be sufficient to consult
-[its documentation](https://www.libsdl.org/projects/SDL_mixer/docs/index.html).
+[its documentation](https://wiki.libsdl.org/SDL_mixer/FrontPage).
 
 Starting from version 0.3, the library is usable in a toplevel (with
 `#require "tsdl-mixer"`).
