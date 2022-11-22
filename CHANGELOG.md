@@ -4,9 +4,9 @@ You can now (again) directly run a "toplevel file" with `ocaml`, for
 instance
 
 ```
-\#use "topfind";;
-\#thread;;
-\#require "tsdl-mixer";;
+#use "topfind";;
+#thread;;
+#require "tsdl-mixer";;
 Tsdl_mixer.Mixer.(init Init.empty) |> ignore
 ```
 
