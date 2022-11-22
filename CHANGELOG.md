@@ -15,3 +15,6 @@ Tsdl_mixer.Mixer.(init Init.empty) |> ignore
 Starting from 0.3, the library name is the same as the opam package
 name `tsdl-mixer`. (The library name used to be `tsdl_mixer`, which was
 confusing).
+
+# new maintainer is sanette
+https://github.com/sanette/tsdl-mixer
