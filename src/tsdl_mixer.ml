@@ -49,7 +49,7 @@ module Mixer = struct
     let fluidsynth = i 32
   end
 
-   (* pkg-config --variable=libdir SDL2_mixer *)
+  (* pkg-config --variable=libdir SDL2_mixer *)
   (* Use Configurator.V1.Pkg_config instead? *)
   let pkg_config () =
     try
