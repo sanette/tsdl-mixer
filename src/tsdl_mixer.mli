@@ -4,7 +4,7 @@
 
 (** SDL2_mixer bindings for use with Tsdl
 
- {b References}
+    {b References}
 
     - {{:https://github.com/sanette/tsdl-mixer} source on github}
 
