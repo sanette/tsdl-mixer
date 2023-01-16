@@ -12,7 +12,7 @@
  (synopsis "SDL2_Mixer bindings to go with Tsdl")
  (description
    "Tsdl_mixer provides bindings to SDL2_Mixer intended to be used with Tsdl.")
- (tags ("tsdl" "SDL" "audio"))
+ (tags ("tsdl" "SDL" "audio" "bindings"))
  (depends
   (ocaml (>= 4.03))
   (tsdl (>= 0.9.1))

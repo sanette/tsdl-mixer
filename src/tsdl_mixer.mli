@@ -1,5 +1,14 @@
-(** SDL2_mixer bindings for use with Tsdl *)
+(*---------------------------------------------------------------------------
+   Copyright (c) 2016-2023 The tsdl-mixer programmers. All rights reserved.
+  ---------------------------------------------------------------------------*)
 
+(** SDL2_mixer bindings for use with Tsdl
+
+ {b References}
+
+    - {{:https://github.com/sanette/tsdl-mixer} source on github}
+
+    - {{:https://wiki.libsdl.org/SDL_mixer/} SDL_mixer API} *)
 module Mixer : sig
   (** {1 General} *)
 

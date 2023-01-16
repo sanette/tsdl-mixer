@@ -7,7 +7,7 @@ description:
 maintainer: ["Vu Ngoc San <san.vu-ngoc@laposte.net>"]
 authors: ["Julian Squires <julian@cipht.net>"]
 license: "BSD-3-Clause"
-tags: ["tsdl" "SDL" "audio"]
+tags: ["tsdl" "SDL" "audio" "bindings"]
 homepage: "https://github.com/sanette/tsdl-mixer"
 bug-reports: "https://github.com/sanette/tsdl-mixer/issues"
 depends: [
