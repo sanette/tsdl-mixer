@@ -6,6 +6,7 @@
 (maintainers "Vu Ngoc San <san.vu-ngoc@laposte.net>")
 (authors "Julian Squires <julian@cipht.net>")
 (source (github sanette/tsdl-mixer))
+(documentation "https://sanette.github.io/tsdl-mixer/Mixer/index.html")
 
 (package
  (name tsdl-mixer)
