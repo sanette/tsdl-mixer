@@ -68,7 +68,7 @@ module Mixer = struct
      https://github.com/ocamllabs/ocaml-ctypes/issues/70 *)
   let from : Dl.library option =
     Sdl.log "Loading Sdl_mixer, Target = %s" Build_config.system;
-    let env = try Sys.getenv "LIBSLD2_PATH" with Not_found -> "" in
+    let env = try Sys.getenv "LIBSDL2_PATH" with Not_found -> "" in
     let filename, path =
       match Build_config.system with
       | "macosx" -> ("libSDL2_mixer-2.0.0.dylib", [ "/opt/homebrew/lib/" ])

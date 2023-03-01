@@ -1,3 +1,7 @@
+# next release
+
+fix typo in variable "LIBSDL2_PATH"
+
 # 0.5 2022/11/30 trying to autodetect library path
 
 And add workflow for github actions for testing dynamic libraries from
