@@ -9,6 +9,7 @@ authors: ["Julian Squires <julian@cipht.net>"]
 license: "BSD-3-Clause"
 tags: ["tsdl" "SDL" "audio" "bindings"]
 homepage: "https://github.com/sanette/tsdl-mixer"
+doc: "https://sanette.github.io/tsdl-mixer/Mixer/index.html"
 bug-reports: "https://github.com/sanette/tsdl-mixer/issues"
 depends: [
   "dune" {>= "2.7"}
