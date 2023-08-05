@@ -1,6 +1,9 @@
-# next release
+# 0.6 2023/08/05 hide startup log
 
-fix typo in variable "LIBSDL2_PATH"
+* Use system category to log "Loading Sdl_mixer" message. (We now log
+  only for dev versions.)
+
+* fix typo in variable "LIBSDL2_PATH"
 
 # 0.5 2022/11/30 trying to autodetect library path
 
