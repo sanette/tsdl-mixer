@@ -74,8 +74,10 @@ module Mixer = struct
            Build_config.system));
     let env = try Sys.getenv "LIBSDL2_PATH" with Not_found -> "" in
     let filename, path =
-      match Build_config.system with
-      | "macosx" -> ("libSDL2_mixer-2.0.0.dylib", [ "/opt/homebrew/lib/" ])
+      match Build_config.system, Sys.os_type with
+      | "macosx", _ -> ("libSDL2_mixer-2.0.0.dylib", [ "/opt/homebrew/lib/" ])
+      | _, "Win32"
+      | _, "Cygwin" -> ("libSDL2_mixer.dll.a", [])
       | _ ->
           ( "libSDL2_mixer-2.0.so.0",
             [ "/usr/lib/x86_64-linux-gnu/"; "/usr/local/lib" ] )
