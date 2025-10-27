@@ -77,7 +77,7 @@ module Mixer = struct
       match Build_config.system, Sys.os_type with
       | "macosx", _ -> ("libSDL2_mixer-2.0.0.dylib", [ "/opt/homebrew/lib/" ])
       | _, "Win32"
-      | _, "Cygwin" -> ("libSDL2_mixer.dll.a", [])
+      | _, "Cygwin" -> ("SDL2_mixer.dll", [])
       | _ ->
           ( "libSDL2_mixer-2.0.so.0",
             [ "/usr/lib/x86_64-linux-gnu/"; "/usr/local/lib" ] )
