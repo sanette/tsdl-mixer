@@ -1,3 +1,7 @@
+# Pending
+
+* (@bluddy) specify DLL file for Windows
+
 # 0.6 2023/08/05 hide startup log
 
 * Use system category to log "Loading Sdl_mixer" message. (We now log
