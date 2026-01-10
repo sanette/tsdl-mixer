@@ -1,5 +1,5 @@
 (lang dune 2.7)
-(version "0.6")
+(version "0.6.1")
 (name tsdl-mixer)
 (generate_opam_files true)
 (license BSD-3-Clause)
@@ -19,5 +19,4 @@
   (tsdl (>= 0.9.1))
    conf-sdl2-mixer
   (ctypes (>= 0.4.0))
-   ctypes-foreign
-   dune-configurator))
+   ctypes-foreign))
