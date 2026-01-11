@@ -8,7 +8,7 @@
 
     - {{:https://github.com/sanette/tsdl-mixer} source on github}
 
-    - {{:https://wiki.libsdl.org/SDL_mixer/} SDL_mixer API} *)
+    - {{:https://wiki.libsdl.org/SDL2_mixer} SDL_mixer API} *)
 module Mixer : sig
   (** {1 General} *)
 
