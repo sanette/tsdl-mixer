@@ -74,14 +74,32 @@ module Mixer = struct
            Build_config.system));
     let env = try Sys.getenv "LIBSDL2_PATH" with Not_found -> "" in
     let filename, path =
-      match (Build_config.system, Sys.os_type) with
-      | "macosx", _ ->
-          ( "libSDL2_mixer-2.0.0.dylib",
-            [ "/opt/homebrew/lib/"; "/opt/local/lib" ] )
-      | _, "Win32" | _, "Cygwin" -> ("SDL2_mixer.dll", [])
+      (* In principle only the basename is enough because the appropriate PATH
+         is used if SDL2_ttf was installed properly. We provide below more
+         hardcoded paths for non-standard installs where PATH is not correctly
+         set. *)
+      match (Sys.os_type, Build_config.system) with
+      | _, "macosx" ->
+          ( "libSDL2_mixer.dylib",
+            [ ""; "/opt/homebrew/lib/"; "/opt/local/lib/"; "/usr/local/lib/" ]
+          )
+      | "Win32", _ | "Cygwin", _ ->
+          ( "SDL2_mixer.dll",
+            [
+              "";
+              "/SDL2/SDL2_mixer/x86_64-w64-mingw32/bin";
+              "/usr/x86_64-w64-mingw32/sys-root/mingw/bin";
+              "/usr/i686-w64-mingw32/sys-root/mingw/bin";
+              "/clangarm64/bin";
+              "/clang64/bin";
+              "/clang32/bin";
+              "/ucrt64/bin";
+              "/mingw64/bin";
+              "/mingw32/bin";
+            ] )
       | _ ->
-          ( "libSDL2_mixer-2.0.so.0",
-            [ "/usr/lib/x86_64-linux-gnu/"; "/usr/local/lib" ] )
+          ( "libSDL2_mixer.so",
+            [ ""; "/usr/lib/x86_64-linux-gnu/"; "/usr/local/lib" ] )
     in
     let rec loop = function
       | [] -> None
