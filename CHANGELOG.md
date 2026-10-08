@@ -1,5 +1,11 @@
 # Pending
 
+* (@bluddy) On Windows, search the executable's directory and the current
+  working directory for SDL2_mixer.dll. ctypes' Dl.dlopen uses LoadLibrary
+  which does not reliably search the application directory for bare
+  filenames, especially under Cygwin/opam. This also provides a fallback
+  when LIBSDL2_PATH points to a directory with a broken DLL.
+
 * (@bluddy) specify DLL file for Windows
 
 # 0.6 2023/08/05 hide startup log

@@ -84,9 +84,28 @@ module Mixer = struct
             [ ""; "/opt/homebrew/lib/"; "/opt/local/lib/"; "/usr/local/lib/" ]
           )
       | "Win32", _ | "Cygwin", _ ->
+          (* On Windows, also search the executable's directory (where DLLs
+             typically sit next to the .exe for portable apps) and the current
+             working directory. ctypes' Dl.dlopen uses LoadLibrary, which does
+             not reliably search the application directory for bare filenames,
+             especially under Cygwin/opam. LIBSDL2_PATH may also point to a
+             directory with a broken DLL, so we need these fallbacks. *)
+          let exe_dir =
+            try
+              let exe = Sys.executable_name in
+              let abs =
+                if Filename.is_relative exe then
+                  Filename.concat (Sys.getcwd ()) exe
+                else exe
+              in
+              Filename.dirname abs
+            with _ -> "."
+          in
           ( "SDL2_mixer.dll",
             [
               "";
+              exe_dir;
+              ".";
               "/SDL2/SDL2_mixer/x86_64-w64-mingw32/bin";
               "/usr/x86_64-w64-mingw32/sys-root/mingw/bin";
               "/usr/i686-w64-mingw32/sys-root/mingw/bin";
